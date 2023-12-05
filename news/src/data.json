@@ -1,0 +1,37 @@
+
+
+{
+    "posts": [
+      {
+        "id": 1,
+        "title": "News 1",
+        "content": "This is the engaging content of news 1, providing insightful details and captivating information. Delve into the story to uncover a world of knowledge and intrigue.",
+        "tagline": "Unveiling Perspectives: Dive into News 1 for an enlightening journey through the realms of information."
+        },
+        {
+        "id": 2,
+        "title": "News 2",
+        "content": "Experience the riveting narrative of news 2, where each word weaves a tapestry of information. Immerse yourself in the content, unlocking a realm of thought-provoking insights and perspectives.",
+        "tagline": "Beyond the Headlines: Explore News 2 for a deeper understanding and a fresh perspective on current events."
+        }
+    ],
+    "users": [
+      {
+        "id": 101,
+        "username": "john_doe",
+        "name": "John Doe",
+        "email": "john.doe@example.com",
+        "password":"India@123",
+        "role": "admin"
+      },
+      {
+        "id": 102,
+        "username": "jane_smith",
+        "name": "Jane Smith",
+        "email": "jane.smith@example.com",
+        "password":"India@123",
+        "role": "user"
+      }
+    ]
+  }
+  
