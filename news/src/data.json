@@ -1,20 +1,98 @@
 
 
 {
-    "posts": [
-      {
-        "id": 1,
-        "title": "News 1",
-        "content": "This is the engaging content of news 1, providing insightful details and captivating information. Delve into the story to uncover a world of knowledge and intrigue.",
-        "tagline": "Unveiling Perspectives: Dive into News 1 for an enlightening journey through the realms of information."
-        },
-        {
-        "id": 2,
-        "title": "News 2",
-        "content": "Experience the riveting narrative of news 2, where each word weaves a tapestry of information. Immerse yourself in the content, unlocking a realm of thought-provoking insights and perspectives.",
-        "tagline": "Beyond the Headlines: Explore News 2 for a deeper understanding and a fresh perspective on current events."
-        }
-    ],
+  "posts": [
+    {
+      "id": 1,
+      "title": "Exciting Tech Advancements Unveiled",
+      "content": "Discover the latest technological breakthroughs shaping our future. From artificial intelligence to space exploration, this news covers it all.",
+      "tagline": "Exploring the cutting-edge world of technology and innovation.",
+      "description": "Exciting Tech Advancements Unveiled provides insights into the latest technological breakthroughs that are shaping the future. The news covers a wide range of topics, including artificial intelligence, space exploration, and more.",
+      "imageUrl": "https://thumbs.dreamstime.com/b/news-woodn-dice-depicting-letters-bundle-small-newspapers-leaning-left-dice-34802664.jpg",
+      "category": "Technology"
+    },
+    {
+      "id": 2,
+      "title": "Entertainment Buzz: Star-Studded Events Await",
+      "content": "Get ready for a rollercoaster of entertainment! From exclusive interviews to red carpet events, delve into the glamorous world of showbiz.",
+      "tagline": "Captivating stories and star-studded events in the world of entertainment.",
+      "description": "Entertainment Buzz: Star-Studded Events Await brings you the latest from the glamorous world of showbiz. Dive into captivating stories and exclusive interviews with your favorite stars.",
+      "imageUrl": "https://example.com/entertainment-buzz.jpg",
+      "category": "Entertainment"
+    },
+    {
+      "id": 3,
+      "title": "Revolutionizing Education: Future of Learning",
+      "content": "Explore groundbreaking approaches to education. From virtual classrooms to interactive learning, witness the evolution of education.",
+      "tagline": "Shaping the future of education with innovative learning methods.",
+      "description": "Revolutionizing Education: Future of Learning explores groundbreaking approaches to education, including virtual classrooms and interactive learning. Join the journey of shaping the future of education.",
+      "imageUrl": "https://example.com/education-revolution.jpg",
+      "category": "Education"
+    },
+    {
+      "id": 4,
+      "title": "Political Insights: Global Perspectives",
+      "content": "Dive into the complex world of politics. Gain insights into global affairs, diplomatic relations, and the ever-changing political landscape.",
+      "tagline": "Navigating the intricate web of politics with a global perspective.",
+      "description": "Political Insights: Global Perspectives provides a deep dive into the complex world of politics. Gain insights into global affairs, diplomatic relations, and the ever-changing political landscape.",
+      "imageUrl": "https://example.com/political-insights.jpg",
+      "category": "Politics"
+    },
+    {
+      "id": 5,
+      "title": "Fashion Extravaganza: Trends Redefined",
+      "content": "Step into the world of fashion where trends are set and styles are redefined. From runways to street style, witness the fashion revolution.",
+      "tagline": "Redefined styles and trendsetting fashion in the glamorous world of couture.",
+      "description": "Fashion Extravaganza: Trends Redefined invites you to step into the world of fashion. Experience redefined styles and witness the trendsetting fashion in the glamorous world of couture.",
+      "imageUrl": "https://example.com/fashion-extravaganza.jpg",
+      "category": "Fashion"
+    },
+    {
+      "id": 6,
+      "title": "Tech Innovations: Changing the Game",
+      "content": "Breaking barriers in technology! Explore how new innovations are reshaping industries and influencing the way we live and work.",
+      "tagline": "Game-changing tech innovations revolutionizing the digital landscape.",
+      "description": "Tech Innovations: Changing the Game explores how new innovations are breaking barriers and reshaping industries. Witness the game-changing tech innovations that are revolutionizing the digital landscape.",
+      "imageUrl": "https://example.com/tech-innovations.jpg",
+      "category": "Technology"
+    },
+    {
+      "id": 7,
+      "title": "Celebrities Speak Out: Hollywood Unplugged",
+      "content": "Exclusive interviews and candid moments with your favorite celebrities. Hollywood's biggest stars share their stories and insights.",
+      "tagline": "Uncensored and unplugged: Hollywood's A-listers speak their minds.",
+      "description": "Celebrities Speak Out: Hollywood Unplugged brings you exclusive interviews and candid moments with your favorite celebrities. Hollywood's A-listers speak their minds in this uncensored and unplugged series.",
+      "imageUrl": "https://example.com/hollywood-unplugged.jpg",
+      "category": "Entertainment"
+    },
+    {
+      "id": 8,
+      "title": "Innovative Education Solutions: Beyond Classrooms",
+      "content": "Explore unconventional education methods that go beyond traditional classrooms. From online courses to experiential learning, education evolves.",
+      "tagline": "Beyond classrooms: Innovations in education for a dynamic learning experience.",
+      "description": "Innovative Education Solutions: Beyond Classrooms explores unconventional education methods, including online courses and experiential learning. Join the journey beyond classrooms and discover innovations in education for a dynamic learning experience.",
+      "imageUrl": "https://example.com/innovative-education.jpg",
+      "category": "Education"
+    },
+    {
+      "id": 9,
+      "title": "Political Turbulence: Navigating Global Challenges",
+      "content": "A deep dive into the challenges and triumphs of global politics. Analyze the geopolitical landscape and the impact on nations worldwide.",
+      "tagline": "Navigating turbulent waters: Global politics in an ever-changing world.",
+      "description": "Political Turbulence: Navigating Global Challenges takes a deep dive into the challenges and triumphs of global politics. Analyze the geopolitical landscape and understand the impact on nations worldwide.",
+      "imageUrl": "https://example.com/political-turbulence.jpg",
+      "category": "Politics"
+    },
+    {
+      "id": 10,
+      "title": "Fashion Forward: Emerging Trends",
+      "content": "From haute couture to street style, explore the latest trends shaping the fashion landscape. Discover emerging designers and style influencers.",
+      "tagline": "Embracing the future of fashion: Emerging trends and style revelations.",
+      "description": "Fashion Forward: Emerging Trends explores the latest trends shaping the fashion landscape, from haute couture to street style. Embrace the future of fashion and discover emerging designers and style revelations.",
+      "imageUrl": "https://example.com/fashion-forward.jpg",
+      "category": "Fashion"
+    }
+  ],
     "users": [
       {
         "id": 101,

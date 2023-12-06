@@ -1,7 +1,9 @@
+
 import NewsPost from "./NewsPost";
 
 const HomePage = () => {
     return ( <>
+    
 <NewsPost/>
     </> );
 }

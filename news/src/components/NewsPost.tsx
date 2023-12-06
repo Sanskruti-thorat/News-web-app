@@ -30,6 +30,8 @@ const NewsPost = () => {
       <h1>NewsPost</h1>
 
       {formData.length > 0 ? (
+        <>
+      <img src="https://imagez.tmz.com/image/c1/4by3/2020/07/30/c115ad2dc849438a97a0ad3097b416df_md.jpg" height={"550px"} width={"550px"} alt="" />
         <table>
           <thead>
             <tr>
@@ -50,6 +52,7 @@ const NewsPost = () => {
             ))}
           </tbody>
         </table>
+        </>
       ) : (
         <p>No news available</p>
       )}

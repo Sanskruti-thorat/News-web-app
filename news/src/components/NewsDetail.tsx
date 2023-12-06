@@ -6,7 +6,7 @@ interface NewsData {
   id: number;
   title: string;
   tagline: string;
-  content: string; // Adjust the type according to your API response
+  content: string; 
 }
 
 const NewsDetail = () => {
@@ -21,7 +21,7 @@ const NewsDetail = () => {
         const response = await axios.get(`/posts/${id}`);
         setBlog(response.data);
       } catch (err) {
-        const e = err as Error; // Explicitly type 'err' as 'Error'
+        const e = err as Error; 
         setError(e.message);
       } finally {
         setIsPending(false);
@@ -39,7 +39,7 @@ const NewsDetail = () => {
       {blog && (
         <article>
           <h2>{blog.title}</h2>
-          <p>Tagline: {blog.tagline}</p>
+          <p>{blog.tagline}</p>
           <div>{blog.content}</div>
         </article>
       )}
