@@ -2,25 +2,73 @@
 
 import { useState } from 'react';
 import { Form, Navbar, Nav, Button, Modal, Container } from 'react-bootstrap';
-import { Link as RouterLink } from 'react-router-dom';
+import { Link as RouterLink, useNavigate } from 'react-router-dom';
 
 import logo from '../assets/global-247-high-resolution-logo-transparent.svg';
+import UserServices from '../Axios/user.services';
+
 
 const Header = () => {
   const [modalShow, setModalShow] = useState(false);
-  // const [email, setEmail] = useState('');
-  // const [password, setPassword] = useState('');
+  const [loggedIn, setLoggedIn] = useState(false);
+  const userServices = UserServices();
+ const [currentUser , setCurrentUser] = useState({
+  email:'',
+  password:'',
+})
+const navigate = useNavigate();
+ 
+const adminData = async () => {
+  try {
+    const response = await userServices().getAdmin();
+    const admin = response.data;
+    let log = false;
 
-  // const handleLogin = async (e: React.FormEvent<HTMLFormElement>) => {
-  //   e.preventDefault();
+    admin.forEach((adminItem: any) => {
+      if (adminItem.email === currentUser.email) {
+        log = true;
+        if (adminItem.password === currentUser.password) {
+          if(adminItem.role === "admin"){
 
-  //   try {
-  //     // Add your login logic here
-  //     console.log('Login attempt:', { email, password });
-  //   } catch (error) {
-  //     console.error('Login error:', error.message);
-  //   }
-  // };
+            console.log("logged in");
+            setLoggedIn(true);
+            setModalShow(false);
+            navigate('/dashboard');
+          }
+          else (
+            console.log("not authorised")
+          )
+
+        } else {
+          console.log("wrong password");
+        }
+      }
+    });
+
+    if (!log) {
+      console.log("wrong email");
+    }
+  } catch (error) {
+    console.log('Error fetching news:', error);
+  }
+};
+
+  
+const handleLogin = async (e:any) => {
+  e.preventDefault();
+  await adminData();
+};
+
+const handleLogout = () => {
+  // Perform logout actions if needed
+
+  // Set loggedIn to true (assuming successful logout sets the user as logged in)
+  setLoggedIn(false);
+
+  // Navigate to the home page with loggedIn as true
+  navigate('/');
+};
+
 
   function MyVerticallyCenteredModal(props: any) {
     return (
@@ -29,14 +77,14 @@ const Header = () => {
           <Modal.Title id="contained-modal-title-vcenter">Author Login</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <Form >
+          <Form  onSubmit={handleLogin}>
             <Form.Group controlId="formBasicEmail">
               <Form.Label>Email:</Form.Label>
               <Form.Control
                 type="email"
                 placeholder="Enter your email"
-                // value={email}
-                // onChange={(e) => setEmail(e.target.value)}
+                value={currentUser.email}
+                onChange={(e) => setCurrentUser({ ...currentUser, email: e.target.value })}
                 required
               />
             </Form.Group>
@@ -45,8 +93,8 @@ const Header = () => {
               <Form.Control
                 type="password"
                 placeholder="Enter your password"
-                // value={password}
-                // onChange={(e) => setPassword(e.target.value)}
+                value={currentUser.password}
+                onChange={(e) => setCurrentUser({ ...currentUser, password: e.target.value })}
                 required
               />
             </Form.Group>
@@ -81,8 +129,10 @@ const Header = () => {
               Home
             </Nav.Link>
           </Nav>
-          <Button variant="outline-secondary" onClick={() => setModalShow(true)}>
-            Login
+
+
+           <Button variant="outline-secondary" onClick={loggedIn ? handleLogout : () => setModalShow(true)}>
+            {loggedIn ? 'Logout' : 'Login'}
           </Button>
 
           <MyVerticallyCenteredModal show={modalShow} onHide={() => setModalShow(false)} />
@@ -93,3 +143,17 @@ const Header = () => {
 };
 
 export default Header;
+
+
+
+
+// {loggedIn?(
+
+// <Button variant="outline-secondary" onClick={() => setModalShow(true)}>
+//   Login
+// </Button>
+//   ):(
+//     <Button variant="outline-secondary" onClick={() => setModalShow(true)}>
+//     Logout
+//   </Button>
+//   )}

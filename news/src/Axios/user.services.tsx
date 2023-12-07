@@ -7,6 +7,9 @@ const UserServices =()=>{
         getUser: async()=>{
           
             return await axios.get('/posts');
+        },
+        getAdmin: async()=>{
+          return await axios.get('/admin');
         }
     };
   };

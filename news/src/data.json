@@ -1,7 +1,7 @@
 
 
 {
-  "posts": [
+   "posts": [
     {
       "id": 1,
       "title": "Exciting Tech Advancements Unveiled",
@@ -93,7 +93,7 @@
       "category": "Fashion"
     }
   ],
-    "users": [
+    "admin": [
       {
         "id": 101,
         "username": "john_doe",

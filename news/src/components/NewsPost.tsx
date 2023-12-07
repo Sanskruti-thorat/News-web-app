@@ -1,26 +1,28 @@
 import  { useEffect, useState } from "react";
 import UserServices from "../Axios/user.services";
 import { Link } from "react-router-dom";
+import logo from '../../public/luca-bravo-XJXWbfSo2f0-unsplash.jpg'
 
 interface NewsData {
   id: number;
   title: string;
   tagline: string;
+  imageUrl:string;
 }
 
 const NewsPost = () => {
   const [formData, setFormData] = useState<NewsData[]>([]);
   const userServices = UserServices();
 
+  const fetchNews = async () => {
+    try {
+      const response = await userServices().getUser();
+      setFormData(response.data);
+    } catch (error) {
+      console.log('Error fetching news:', error);
+    }
+  };
   useEffect(() => {
-    const fetchNews = async () => {
-      try {
-        const response = await userServices().getUser();
-        setFormData(response.data);
-      } catch (error) {
-        console.log('Error fetching news:', error);
-      }
-    };
 
     fetchNews();
   }, []);
@@ -31,7 +33,6 @@ const NewsPost = () => {
 
       {formData.length > 0 ? (
         <>
-      <img src="https://imagez.tmz.com/image/c1/4by3/2020/07/30/c115ad2dc849438a97a0ad3097b416df_md.jpg" height={"550px"} width={"550px"} alt="" />
         <table>
           <thead>
             <tr>
@@ -39,6 +40,7 @@ const NewsPost = () => {
               <th>Tagline</th>
               <th>Action</th>
             </tr>
+            <img src={logo} height={"100px"} width={"100px"} alt="" />
           </thead>
           <tbody>
             {formData.map((data) => (
