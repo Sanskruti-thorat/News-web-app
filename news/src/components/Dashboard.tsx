@@ -10,6 +10,12 @@
         const Dashboard = () => {
             const [formData, setFormData] = useState<NewsData[]>([]);
             const userServices = UserServices();
+
+
+         
+
+
+
             useEffect(() => {
               const fetchNews = async () => {
                 try {
@@ -43,6 +49,7 @@
                   <td>
                     <Link to={`/NewsDetail/${data.id}`}>Read More</Link>
                   </td>
+                
                 </tr>
               ))}
             </tbody>

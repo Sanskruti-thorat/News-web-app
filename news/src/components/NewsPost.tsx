@@ -1,7 +1,8 @@
 import  { useEffect, useState } from "react";
 import UserServices from "../Axios/user.services";
 import { Link } from "react-router-dom";
-import logo from '../../public/luca-bravo-XJXWbfSo2f0-unsplash.jpg'
+// import logo from '../../public/luca-bravo-XJXWbfSo2f0-unsplash.jpg'
+// import posts from "../data.json"
 
 interface NewsData {
   id: number;
@@ -40,11 +41,12 @@ const NewsPost = () => {
               <th>Tagline</th>
               <th>Action</th>
             </tr>
-            <img src={logo} height={"100px"} width={"100px"} alt="" />
           </thead>
           <tbody>
             {formData.map((data) => (
+              
               <tr key={data.id}>
+                <img src={data.imageUrl} height={"100px"} width={"100px"} alt="" />
                 <td>{data.title}</td>
                 <td>{data.tagline}</td>
                 <td>
