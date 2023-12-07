@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Form, Navbar, Nav, Button, Modal, Container } from 'react-bootstrap';
 import { Link as RouterLink, useNavigate } from 'react-router-dom';
 
@@ -17,6 +17,14 @@ const Header = () => {
   password:'',
 })
 const navigate = useNavigate();
+
+
+
+
+const checkLoggedIn = () => {
+  const storedUser = localStorage.getItem('user_login');
+  setLoggedIn(!!storedUser); // Set loggedIn based on whether user is stored in localStorage
+};
  
 const adminData = async () => {
   try {
@@ -24,13 +32,14 @@ const adminData = async () => {
     const admin = response.data;
     let log = false;
 
-    admin.forEach((adminItem: any) => {
+    admin.map((adminItem: any) => {
       if (adminItem.email === currentUser.email) {
         log = true;
         if (adminItem.password === currentUser.password) {
           if(adminItem.role === "admin"){
 
             console.log("logged in");
+            localStorage.setItem('user_login', JSON.stringify(adminItem));
             setLoggedIn(true);
             setModalShow(false);
             navigate('/dashboard');
@@ -60,6 +69,7 @@ const handleLogin = async (e:any) => {
 };
 
 const handleLogout = () => {
+  localStorage.removeItem('user_login');
   // Perform logout actions if needed
 
   // Set loggedIn to true (assuming successful logout sets the user as logged in)
@@ -109,6 +119,11 @@ const handleLogout = () => {
       </Modal>
     );
   }
+
+  useEffect(()=>{
+    checkLoggedIn();
+
+  },[]);
 
   return (
     <Navbar bg="dark" variant="dark" expand="lg">

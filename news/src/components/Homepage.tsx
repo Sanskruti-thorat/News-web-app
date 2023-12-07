@@ -3,6 +3,7 @@
 import { useRef, useState } from "react";
 import NewsPost from "./NewsPost";
 
+
 const HomePage = () => {
   const [file, setFile] = useState<File | null>(null);
   const [imageUrl, setImageUrl] = useState<string | null>(null);
@@ -29,17 +30,21 @@ const HomePage = () => {
   };
 
   return (
+
+
     <>
+
       <input type="file" ref={inputRef} name="file" onChange={handleChange} />
       <button onClick={handleUpload}>Upload</button>
       {imageUrl !== null && (
-        <img
+          <img
           src={imageUrl}
           style={{ height: "100px", width: "200px" }}
           alt="Uploaded file"
-        />
-      )}
+          />
+          )}
       <NewsPost />
+   
     </>
   );
 };
