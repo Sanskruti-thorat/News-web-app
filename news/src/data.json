@@ -1,14 +1,12 @@
-
-
 {
-   "posts": [
+  "posts": [
     {
       "id": 1,
       "title": "Exciting Tech Advancements Unveiled",
       "content": "Discover the latest technological breakthroughs shaping our future. From artificial intelligence to space exploration, this news covers it all.",
       "tagline": "Exploring the cutting-edge world of technology and innovation.",
       "description": "Exciting Tech Advancements Unveiled provides insights into the latest technological breakthroughs that are shaping the future. The news covers a wide range of topics, including artificial intelligence, space exploration, and more.",
-      "imageUrl":"/tech1.jpg",
+      "imageUrl": "/tech1.jpg",
       "category": "Technology"
     },
     {
@@ -91,25 +89,51 @@
       "description": "Fashion Forward: Emerging Trends explores the latest trends shaping the fashion landscape, from haute couture to street style. Embrace the future of fashion and discover emerging designers and style revelations.",
       "imageUrl": "/fashion2.jpg",
       "category": "Fashion"
+    },
+    {
+      "id": 11,
+      "title": "neewwwwwww",
+      "tagline": "neewwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww",
+      "content": "neewwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww",
+      "description": "neewwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww",
+      "imageUrl": "neewwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww",
+      "category": "neewwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww"
+    },
+    {
+      "id": 12,
+      "title": "sannnnnnn",
+      "tagline": "sannnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn",
+      "content": "sannnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn",
+      "description": "sannnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn",
+      "imageUrl": "blob:http://127.0.0.1:5173/f83f1289-a0d8-48d8-a446-537b67dedf52",
+      "category": "sannnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn"
+    },
+    {
+      "id": 13,
+      "title": "disha",
+      "tagline": "disha",
+      "content": "disha",
+      "description": "disha",
+      "imageUrl": "blob:http://127.0.0.1:5173/46d7c9ae-53be-490b-8bb1-c0f55bccc2a1",
+      "category": "disha"
     }
   ],
-    "admin": [
-      {
-        "id": 101,
-        "username": "john_doe",
-        "name": "John Doe",
-        "email": "john.doe@example.com",
-        "password":"India@123",
-        "role": "admin"
-      },
-      {
-        "id": 102,
-        "username": "jane_smith",
-        "name": "Jane Smith",
-        "email": "jane.smith@example.com",
-        "password":"India@123",
-        "role": "user"
-      }
-    ]
-  }
-  
+  "admin": [
+    {
+      "id": 101,
+      "username": "john_doe",
+      "name": "John Doe",
+      "email": "john.doe@example.com",
+      "password": "India@123",
+      "role": "admin"
+    },
+    {
+      "id": 102,
+      "username": "jane_smith",
+      "name": "Jane Smith",
+      "email": "jane.smith@example.com",
+      "password": "India@123",
+      "role": "user"
+    }
+  ]
+}

@@ -8,6 +8,10 @@ const UserServices =()=>{
           
             return await axios.get('/posts');
         },
+        addNews:async (data:object)=>{
+          return await  axios.post('/posts', data);
+
+        },
         getAdmin: async()=>{
           return await axios.get('/admin');
         }

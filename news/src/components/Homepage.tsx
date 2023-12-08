@@ -22,6 +22,8 @@ const HomePage = () => {
       const url = URL.createObjectURL(file);
       // Store the created URL in the state
       setImageUrl(url);
+      // console.log(imageUrl)
+    
 
       // Implement your file upload logic here
       // You can use the 'file' state to access the selected file

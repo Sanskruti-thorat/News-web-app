@@ -1,4 +1,5 @@
 import { FC } from "react";
+import { Link } from "react-router-dom";
 
 interface NewsData {
   id: number;
@@ -18,7 +19,7 @@ const Newscard: FC<NewscardProps> = ({ data }) => {
   return (
     <div className='container'>
       <div className='row justify-content-center'>
-        <div className='col-md-4 col-sm-6 my-3 border-0'>
+        <div className='col-md-12 col-sm-12 my-3 border-0'>
           <div className='card-img-top text-center'>
             <img src={data.imageUrl} alt="" className="img-fluid" />
           </div>
@@ -27,7 +28,8 @@ const Newscard: FC<NewscardProps> = ({ data }) => {
               <h4>{data.title}</h4>
             </div>
             <div className='card-text'>
-              <p>{data.tagline}</p>
+              <p>{data.tagline}
+              <Link to={`/NewsDetail/${data.id}`}>Read More</Link> </p>
             </div>
           </div>
         </div>

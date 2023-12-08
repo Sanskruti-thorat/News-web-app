@@ -1,6 +1,7 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
+import { Container, Row, Col } from "react-bootstrap";
 import UserServices from "../Axios/user.services";
-import Newscard from "./NewsCard";
+import NewsCard from "./NewsCard";
 
 interface NewsData {
   id: number;
@@ -30,18 +31,20 @@ const NewsPost = () => {
   }, []);
 
   return (
-    <>
-      <h1>NewsPost</h1>
+    <Container className="mt-4">
+      <h1 className="mb-4">News Posts</h1>
       {formData.length > 0 ? (
-        <>
+        <Row>
           {formData.map((data) => (
-            <Newscard key={data.id} data={data} />
+            <Col key={data.id} md={4} className="mb-4">
+              <NewsCard data={data} />
+            </Col>
           ))}
-        </>
+        </Row>
       ) : (
         <p>No news available</p>
       )}
-    </>
+    </Container>
   );
 };
 
