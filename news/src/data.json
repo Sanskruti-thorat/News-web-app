@@ -89,33 +89,6 @@
       "description": "Fashion Forward: Emerging Trends explores the latest trends shaping the fashion landscape, from haute couture to street style. Embrace the future of fashion and discover emerging designers and style revelations.",
       "imageUrl": "/fashion2.jpg",
       "category": "Fashion"
-    },
-    {
-      "id": 11,
-      "title": "neewwwwwww",
-      "tagline": "neewwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww",
-      "content": "neewwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww",
-      "description": "neewwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww",
-      "imageUrl": "neewwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww",
-      "category": "neewwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww"
-    },
-    {
-      "id": 12,
-      "title": "sannnnnnn",
-      "tagline": "sannnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn",
-      "content": "sannnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn",
-      "description": "sannnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn",
-      "imageUrl": "blob:http://127.0.0.1:5173/f83f1289-a0d8-48d8-a446-537b67dedf52",
-      "category": "sannnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn"
-    },
-    {
-      "id": 13,
-      "title": "disha",
-      "tagline": "disha",
-      "content": "disha",
-      "description": "disha",
-      "imageUrl": "blob:http://127.0.0.1:5173/46d7c9ae-53be-490b-8bb1-c0f55bccc2a1",
-      "category": "disha"
     }
   ],
   "admin": [

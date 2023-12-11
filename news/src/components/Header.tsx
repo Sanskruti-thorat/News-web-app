@@ -81,9 +81,14 @@ const Header = () => {
               Home
             </Nav.Link>
             {loggedIn && (
+              <>
               <Nav.Link as={RouterLink} to="/dashboard" className="nav-link" style={{ color: 'grey' }}>
-                Dashboard
+               News Dashboard
               </Nav.Link>
+                <Nav.Link as={RouterLink} to="/adminDash" className="nav-link" style={{ color: 'grey' }}>
+                Admin Dashboard
+              </Nav.Link>
+              </>
             )}
           </Nav>
 

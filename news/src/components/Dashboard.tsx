@@ -12,23 +12,37 @@ interface NewsData {
 const Dashboard = () => {
   const [formData, setFormData] = useState<NewsData[]>([]);
   const userServices = UserServices();
+  
+  const fetchNews = async () => {
+    try {
+      const response = await userServices().getUser();
+      setFormData(response.data);
+    } catch (error) {
+      console.log('Error fetching news:', error);
+    }
+  };
 
+  const deleteNews = async (id:number)=>{
+  try{
+const response = await userServices().deleteNews(id)
+ console.log('response', response);
+ fetchNews();
+  }
+  catch (error){
+    console.log('errot',error)
+
+
+  }
+
+  };
   useEffect(() => {
-    const fetchNews = async () => {
-      try {
-        const response = await userServices().getUser();
-        setFormData(response.data);
-      } catch (error) {
-        console.log('Error fetching news:', error);
-      }
-    };
 
     fetchNews();
   }, []);
 
   return (
     <>
-      <h1 className="text-light">Dashboard</h1>
+      <h1 >Dashboard</h1>
       <div className="mb-3">
         <Link to={'/addNews'}>
           <Button variant="success">Add</Button>
@@ -56,7 +70,7 @@ const Dashboard = () => {
                   </Link>
                 </td>
                 <td>
-                  <Button variant="danger" className="mr-2">Delete</Button>
+                  <Button variant="danger" className="mr-2" onClick={()=> deleteNews(data.id)}>Delete</Button>
                   <Button variant="warning">Update</Button>
                 </td>
               </tr>
