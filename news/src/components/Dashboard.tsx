@@ -30,11 +30,11 @@ const response = await userServices().deleteNews(id)
   }
   catch (error){
     console.log('errot',error)
-
-
   }
-
   };
+
+
+  
   useEffect(() => {
 
     fetchNews();

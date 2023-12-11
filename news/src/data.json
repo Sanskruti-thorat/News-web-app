@@ -80,15 +80,6 @@
       "description": "Political Turbulence: Navigating Global Challenges takes a deep dive into the challenges and triumphs of global politics. Analyze the geopolitical landscape and understand the impact on nations worldwide.",
       "imageUrl": "/politics2.jpg",
       "category": "Politics"
-    },
-    {
-      "id": 10,
-      "title": "Fashion Forward: Emerging Trends",
-      "content": "From haute couture to street style, explore the latest trends shaping the fashion landscape. Discover emerging designers and style influencers.",
-      "tagline": "Embracing the future of fashion: Emerging trends and style revelations.",
-      "description": "Fashion Forward: Emerging Trends explores the latest trends shaping the fashion landscape, from haute couture to street style. Embrace the future of fashion and discover emerging designers and style revelations.",
-      "imageUrl": "/fashion2.jpg",
-      "category": "Fashion"
     }
   ],
   "admin": [
