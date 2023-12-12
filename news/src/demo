@@ -1,0 +1,139 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+import { useEffect, useState } from 'react';
+import UsersServices from './UsersServices';
+ 
+const UserList = () => {
+  const [userList, setUserList] = useState([]);
+  const [newUser, setNewUser] = useState({ name: '', email: '' });
+  const [editingUser, setEditingUser] =  useState<number | null>(null);
+  const usersServices = UsersServices();
+ 
+  const fetchUsers = async () => {
+    try {
+      const response = await usersServices().getUserList();
+      setUserList(response.data);
+    } catch (error: any) {
+      console.log('error', error);
+    }
+  }
+ 
+  const addUser = async () => {
+    try {
+      const response = await usersServices().addUser(newUser);
+      setNewUser({ name: '', email: '' });
+      console.log(response.data);
+      fetchUsers();
+    } catch (error: any) {
+      console.log('error adding post', error.message);
+    }
+  }
+ 
+  const deleteUser = async (userId:number) => {
+    try {
+      const response = await usersServices().deleteUser(userId);
+      console.log(response.data);
+      fetchUsers();
+    } catch (error: any) {
+      console.log('error deleting user', error.message);
+    }
+  }
+ 
+  const startEditing = (user:any) => {
+    setEditingUser(user.id);
+    setNewUser({ name: user.name, email: user.email });
+  }
+ 
+  const saveEditing = async () => {
+    try {
+      const response = await usersServices().editUser(editingUser!, newUser);
+      console.log(response.data);
+      setEditingUser(null);
+      setNewUser({ name: '', email: '' });
+      fetchUsers();
+    } catch (error: any) {
+      console.log('error editing user', error.message);
+    }
+  }
+ 
+  useEffect(() => {
+    fetchUsers();
+  });
+ 
+  return (
+    <div>
+      <h2>Add User</h2>
+      <label htmlFor="name">Name:</label>
+      <input
+        type="text"
+        id="name"
+        value={newUser.name}
+        onChange={(e) => setNewUser({ ...newUser, name: e.target.value })}
+      />
+ 
+      <label htmlFor="email">Email:</label>
+      <input
+        type="text"
+        id="email"
+        value={newUser.email}
+        onChange={(e) => setNewUser({ ...newUser, email: e.target.value })}
+      />
+ 
+      {editingUser === null ? (
+        <button onClick={() => addUser()}>Add User</button>
+      ) : (
+        <button onClick={() => saveEditing()}>Save</button>
+      )}
+ 
+      <h2>User List</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          {userList.map((user: any) => (
+            <tr key={user.id}>
+              <td>{user.id}</td>
+              <td>
+                {editingUser === user.id ? (
+                  <input
+                    type="text"
+                    value={newUser.name}
+                    onChange={(e) => setNewUser({ ...newUser, name: e.target.value })}
+                  />
+                ) : (
+                  user.name
+                )}
+              </td>
+              <td>
+                {editingUser === user.id ? (
+                  <input
+                    type="text"
+                    value={newUser.email}
+                    onChange={(e) => setNewUser({ ...newUser, email: e.target.value })}
+                  />
+                ) : (
+                  user.email
+                )}
+              </td>
+              <td>
+                {editingUser === user.id ? (
+                  <button onClick={() => saveEditing()}>Save</button>
+                ) : (
+                  <button onClick={() => startEditing(user)}>Edit</button>
+                )}
+                <button onClick={() => deleteUser(user.id)}>Delete</button>
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  );
+}
+ 
+export default UserList;

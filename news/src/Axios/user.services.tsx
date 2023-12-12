@@ -18,7 +18,17 @@ const UserServices =()=>{
         } ,
         getAdmin: async()=>{
           return await axios.get('/admin');
+        },
+        addAdmin: async(data : object)=>{
+          return await axios.post('/admin', data);
+        },
+        deleteAdmin: async(id:number)=>{
+          return await axios.delete(`/admin/${id}`);
+        },
+        updateAdmin: async (id: number, data: object) => {
+          return await axios.put(`/admin/${id}`, data);
         }
+
     };
   };
   return services;
