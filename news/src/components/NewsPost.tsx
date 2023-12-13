@@ -103,16 +103,16 @@ const NewsPost = () => {
       setFilteredItems(newItems);
     }
   };
+  const sortedItems = filteredItems.slice().sort((a, b) => b.id - a.id);
 
   return (
     <Container className="mt-4">
-      <h1 className="mb-4">News Posts</h1>
       <CatButton catItems={categoryItems} filterItem={filterNews} setItems={setFilteredItems} />
-      {filteredItems.length > 0 ? (
+      {sortedItems.length > 0 ? (
         <Row>
-          {filteredItems.map((data) => (
+          {sortedItems.map((data) => (
             <Col key={data.id} md={4} className="mb-4">
-              <NewsCard data={data} />
+              <NewsCard data={data}  />
             </Col>
           ))}
         </Row>

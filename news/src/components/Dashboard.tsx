@@ -43,7 +43,7 @@ const response = await userServices().deleteNews(id)
 
   return (
     <>
-      <h1 >Dashboard</h1>
+   
       <div className="mb-3">
         <Link to={'/addNews'}>
           <Button variant="success">Add</Button>

@@ -17,7 +17,7 @@ interface NewscardProps {
 
 const Newscard: FC<NewscardProps> = ({ data }) => {
   return (
-    <div className='container'>
+    <div className='container' style={{  padding: '15px', borderRadius: '8px' }}>
       <div className='row justify-content-center'>
         <div className='col-md-12 col-sm-12 my-3 border-0'>
           <div className='card-img-top text-center'>

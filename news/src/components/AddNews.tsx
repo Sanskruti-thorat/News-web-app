@@ -287,7 +287,8 @@ const Addnews = () => {
   };
 
   const handleImageChange = (e:any) => {
-    const image = URL.createObjectURL(e.target.files[0]);
+    const image = e.target.value;
+    // const image = URL.createObjectURL(e.target.files[0]);
     setNewsData({
       ...newsData,
       imageUrl: image,
@@ -382,7 +383,7 @@ const Addnews = () => {
                 <Form.Group controlId="image">
                   <Form.Label>News Image</Form.Label>
                   <Form.Control
-                    type="file"
+                    type="text"
                     className="form-control bg-dark text-white"
                     name="image"
                     onChange={handleImageChange}

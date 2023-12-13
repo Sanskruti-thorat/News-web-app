@@ -62,9 +62,8 @@ interface CatButtonProps {
   setItems: React.Dispatch<React.SetStateAction<NewsData[]>>;
 }
 
-const CatButton: React.FC<CatButtonProps> = ({ catItems, filterItem, setItems }) => {
+const CatButton = ({ catItems, filterItem, setItems }:CatButtonProps) => {
   const handleAllButtonClick = () => {
-    // Show all news items when the "All" button is clicked
     setItems(data.posts);
   };
 
