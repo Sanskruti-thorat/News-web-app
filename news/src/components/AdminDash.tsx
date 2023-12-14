@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { Table, Form, Button, Container, Row, Col } from "react-bootstrap";
 import UserServices from "../Axios/user.services";

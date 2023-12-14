@@ -7,9 +7,13 @@ import UserServices from "../Axios/user.services";
 
 interface NewsData {
   id: number;
-  title: string;
-  category:string;
-  tagline: string;
+    title: string;
+    tagline: string;
+    content: string;
+    description: string;
+    imageUrl: string;
+    videoUrl:string;
+    category: string;
 }
 
 const Dashboard = () => {

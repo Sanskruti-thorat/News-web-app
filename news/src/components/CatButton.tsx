@@ -53,6 +53,7 @@ interface NewsData {
     content: string;
     description: string;
     imageUrl: string;
+    videoUrl:string;
     category: string;
   }
 

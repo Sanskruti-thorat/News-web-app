@@ -273,6 +273,7 @@ const Addnews = () => {
     content: '',
     description: '',
     imageUrl: '',
+    videoUrl:'',
     category: '',
   });
 
@@ -294,6 +295,13 @@ const Addnews = () => {
       imageUrl: image,
     });
   };
+  const handleVideoChange = (e: any) => {
+    const videoUrl = e.target.value;
+    setNewsData({
+      ...newsData,
+      videoUrl: videoUrl,
+    });
+  };
 
   const addNews = async (e:any) => {
     e.preventDefault();
@@ -307,6 +315,7 @@ const Addnews = () => {
         content: '',
         description: '',
         imageUrl: '',
+        videoUrl:'',
         category: '',
       });
       // fetchNews();
@@ -387,6 +396,15 @@ const Addnews = () => {
                     className="form-control bg-dark text-white"
                     name="image"
                     onChange={handleImageChange}
+                  />
+                </Form.Group>
+                <Form.Group controlId="video">
+                  <Form.Label>News video Url</Form.Label>
+                  <Form.Control
+                    type="text"
+                    className="form-control bg-dark text-white"
+                    name="videoUrl"
+                    onChange={handleVideoChange}
                   />
                 </Form.Group>
                 <br />

@@ -157,7 +157,7 @@ const NewsDetail = () => {
         <p>Your are reading: {blog.category}</p>
       <div>
    <ReactPlayer 
-   url='https://www.youtube.com/live/OOtxXPaQvoM?si=u_iSraCsYdJnOhVJ' 
+   url={blog.videoUrl} 
    controls
    width="100%" 
    style={{ maxWidth: '100%', margin: '0 auto' }} 

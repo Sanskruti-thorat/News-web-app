@@ -7,6 +7,7 @@
       "tagline": "Exploring the cutting-edge world of technology and innovation.",
       "description": "Exciting Tech Advancements Unveiled provides insights into the latest technological breakthroughs that are shaping the future. The news covers a wide range of topics, including artificial intelligence, space exploration, and more.",
       "imageUrl": "/tech1.jpg",
+      "videoUrl": "https://youtu.be/LK5j3pp0Too?si=q7J1D6GyB6Nk1_ah",
       "category": "Technology"
     },
     {
@@ -16,6 +17,7 @@
       "tagline": "Captivating stories and star-studded events in the world of entertainment.",
       "description": "Entertainment Buzz: Star-Studded Events Await brings you the latest from the glamorous world of showbiz. Dive into captivating stories and exclusive interviews with your favorite stars.",
       "imageUrl": "/enter4.jpg",
+      "videoUrl": "https://youtu.be/5mEG9ExNxI8?si=ZAcfu6L8pYmhf0rk",
       "category": "Entertainment"
     },
     {
@@ -25,6 +27,7 @@
       "tagline": "Shaping the future of education with innovative learning methods.",
       "description": "Revolutionizing Education: Future of Learning explores groundbreaking approaches to education, including virtual classrooms and interactive learning. Join the journey of shaping the future of education.",
       "imageUrl": "/eduction1.jpg",
+      "videoUrl": "https://youtu.be/wQ6gEsId2Hs?si=eRc-gJpPo0HswUxz",
       "category": "Education"
     },
     {
@@ -34,6 +37,7 @@
       "tagline": "Navigating the intricate web of politics with a global perspective.",
       "description": "Political Insights: Global Perspectives provides a deep dive into the complex world of politics. Gain insights into global affairs, diplomatic relations, and the ever-changing political landscape.",
       "imageUrl": "/politics1.jpg",
+      "videoUrl": "https://youtu.be/r-RmXErVGRQ?si=yvGV_15F6uuifAnD",
       "category": "Politics"
     },
     {
@@ -43,6 +47,7 @@
       "tagline": "Redefined styles and trendsetting fashion in the glamorous world of couture.",
       "description": "Fashion Extravaganza: Trends Redefined invites you to step into the world of fashion. Experience redefined styles and witness the trendsetting fashion in the glamorous world of couture.",
       "imageUrl": "/fashion1.jpg",
+      "videoUrl": "https://youtu.be/yEv_E5WYfmE?si=k3xUVrXbSHeWw4J8",
       "category": "Fashion"
     },
     {
@@ -52,6 +57,7 @@
       "tagline": "Game-changing tech innovations revolutionizing the digital landscape.",
       "description": "Tech Innovations: Changing the Game explores how new innovations are breaking barriers and reshaping industries. Witness the game-changing tech innovations that are revolutionizing the digital landscape.",
       "imageUrl": "/tech2.jpg",
+      "videoUrl": "https://youtu.be/bXYBa3NOVHw?si=0R-CjnncNPYHSE5B",
       "category": "Technology"
     },
     {
@@ -61,6 +67,7 @@
       "tagline": "Uncensored and unplugged: Hollywood's A-listers speak their minds.",
       "description": "Celebrities Speak Out: Hollywood Unplugged brings you exclusive interviews and candid moments with your favorite celebrities. Hollywood's A-listers speak their minds in this uncensored and unplugged series.",
       "imageUrl": "/enter3.jpg",
+      "videoUrl": "https://youtu.be/lFY81Up7_j8?si=rgHLA-hy0u3GHnnk",
       "category": "Entertainment"
     },
     {
@@ -70,6 +77,7 @@
       "tagline": "Beyond classrooms: Innovations in education for a dynamic learning experience.",
       "description": "Innovative Education Solutions: Beyond Classrooms explores unconventional education methods, including online courses and experiential learning. Join the journey beyond classrooms and discover innovations in education for a dynamic learning experience.",
       "imageUrl": "/eduction2.jpg",
+      "videoUrl": "https://youtu.be/JMLsHI8aV0g?si=9ylrlfIBOmIUCFAO",
       "category": "Education"
     },
     {
@@ -79,7 +87,18 @@
       "tagline": "Navigating turbulent waters: Global politics in an ever-changing world.",
       "description": "Political Turbulence: Navigating Global Challenges takes a deep dive into the challenges and triumphs of global politics. Analyze the geopolitical landscape and understand the impact on nations worldwide.",
       "imageUrl": "/politics2.jpg",
+      "videoUrl": "https://youtu.be/hpVbT7qYFao?si=VTH_mv_aW9s23ue-",
       "category": "Politics"
+    },
+    {
+      "id": 10,
+      "title": "svjlbadv",
+      "tagline": "svjlbadv",
+      "content": "svjlbadv",
+      "description": "svjlbadv",
+      "imageUrl": "/fashion4.jpg",
+      "videoUrl": "https://youtu.be/hpVbT7qYFao?si=VTH_mv_aW9s23ue-",
+      "category": "svjlbadv"
     }
   ],
   "admin": [
