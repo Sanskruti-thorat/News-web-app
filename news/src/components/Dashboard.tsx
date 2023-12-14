@@ -80,7 +80,7 @@ const response = await userServices().deleteNews(id)
                 </td>
                 <td>
                   <Button variant="danger" className="mr-2" onClick={()=> deleteNews(data.id)}>Delete</Button>
-                  {/* <Button variant="warning">Update</Button> */}
+                  <Button variant="warning">Update</Button>
                 </td>
               </tr>
             ))}
