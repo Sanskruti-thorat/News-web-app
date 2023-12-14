@@ -119,8 +119,8 @@
       "id": 104
     },
     {
-      "name": "johndoe",
       "username": "john done",
+      "name": "johndoe",
       "email": "johndoe@gmail.com",
       "password": "john",
       "role": "admin",
