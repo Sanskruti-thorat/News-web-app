@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { Button, Table } from 'react-bootstrap';
 import UserServices from "../Axios/user.services";
 
+
 interface NewsData {
   id: number;
   title: string;
