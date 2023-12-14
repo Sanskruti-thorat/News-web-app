@@ -7,6 +7,7 @@ import UserServices from "../Axios/user.services";
 interface NewsData {
   id: number;
   title: string;
+  category:string;
   tagline: string;
 }
 
@@ -55,6 +56,7 @@ const response = await userServices().deleteNews(id)
           <thead>
             <tr>
               <th>Title</th>
+              <th>Category</th>
               <th>Tagline</th>
               <th>Links</th>
               <th>Action</th>
@@ -64,6 +66,7 @@ const response = await userServices().deleteNews(id)
             {formData.map((data) => (
               <tr key={data.id}>
                 <td>{data.title}</td>
+                <td>{data.category}</td>
                 <td>{data.tagline}</td>
                 <td>
                   <Link to={`/NewsDetail/${data.id}`} className="btn btn-info">
@@ -72,7 +75,7 @@ const response = await userServices().deleteNews(id)
                 </td>
                 <td>
                   <Button variant="danger" className="mr-2" onClick={()=> deleteNews(data.id)}>Delete</Button>
-                  <Button variant="warning">Update</Button>
+                  {/* <Button variant="warning">Update</Button> */}
                 </td>
               </tr>
             ))}

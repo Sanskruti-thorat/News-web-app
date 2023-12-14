@@ -80,22 +80,13 @@
       "description": "Political Turbulence: Navigating Global Challenges takes a deep dive into the challenges and triumphs of global politics. Analyze the geopolitical landscape and understand the impact on nations worldwide.",
       "imageUrl": "/politics2.jpg",
       "category": "Politics"
-    },
-    {
-      "id": 10,
-      "title": ",dv ;laem",
-      "tagline": "k,v al ",
-      "content": ";lvda:mv",
-      "description": "k;a d;kzv ",
-      "imageUrl": "/fashion2.jpg",
-      "category": "Fashion"
     }
   ],
   "admin": [
     {
       "id": 102,
       "username": "jane_smith",
-      "name": "Jane Smith", 
+      "name": "Jane Smith",
       "email": "jane.smith@example.com",
       "password": "India@123",
       "role": "user"
@@ -107,6 +98,14 @@
       "password": "me",
       "role": "admin",
       "id": 104
+    },
+    {
+      "name": "johndoe",
+      "username": "john done",
+      "email": "johndoe@gmail.com",
+      "password": "john",
+      "role": "admin",
+      "id": 105
     }
   ]
 }

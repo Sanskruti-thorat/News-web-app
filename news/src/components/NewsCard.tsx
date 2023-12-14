@@ -23,6 +23,7 @@ const Newscard: FC<NewscardProps> = ({ data }) => {
           <div className='card-img-top text-center'>
             <img src={data.imageUrl} alt="" className="img-fluid" />
           </div>
+
           <div className='card-body'>
             <div className='card-title fw-bold fs-4'>
               <h4>{data.title}</h4>
@@ -39,3 +40,6 @@ const Newscard: FC<NewscardProps> = ({ data }) => {
 };
 
 export default Newscard;
+
+
+{/* <iframe width="560" height="315" src="" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> */}
