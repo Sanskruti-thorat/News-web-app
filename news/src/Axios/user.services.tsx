@@ -16,6 +16,10 @@ const UserServices =()=>{
           return await axios.delete(`/posts/${id}`);
 
         } ,
+        updateNews:async (id:number, data:object)=>{
+          return await axios.put(`/posts/${id}`, data);
+
+        },
         getAdmin: async()=>{
           return await axios.get('/admin');
         },
