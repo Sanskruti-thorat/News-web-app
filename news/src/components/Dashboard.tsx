@@ -18,11 +18,22 @@ interface NewsData {
 }
 
 const Dashboard = () => {
+  const [activeAdimin , setActiveAdimin] = useState('');
   const values = true;
   const [fullscreen, setFullscreen] = useState(true);
   const [show, setShow] = useState(false);
   const [formData, setFormData] = useState<NewsData[]>([]);
   const userServices = UserServices();
+  const [currentNews , setCurrentNews] = useState({
+    id: 0,
+    title: '',
+    tagline: '',
+    content:'',
+    description: '',
+    imageUrl:'', 
+    videoUrl:'',
+    category: '',
+  })
 
 
   function handleShow(breakpoint:any) {
@@ -30,7 +41,7 @@ const Dashboard = () => {
     
     <Button className="me-2 mb-2" onClick={() => handleShow(values)}>
           Full screen 
-        </Button>
+    </Button>
     setShow(true);
   }
 
@@ -55,38 +66,55 @@ const response = await userServices().deleteNews(id)
   }
   };
 
-  // const updateEmployee = async () => {
-  //   try {
-  //     await userServices().updatePeople(currentEmployee.id, currentEmployee);
-  //     fetchEmployee();
-  //     handleClose();
-  //     setCurrentEmployee({
-  //       id: 0,
-  //       name: '',
-  //       email: '',
-  //       phone: '',
-  //       gender: '',
-  //     });
-  //   } catch (error) {
-  //     console.log('error', error);
-  //   }
-  // };
+  const updateNews = async () => {
+    try {
+      await userServices().updateNews(currentNews.id, currentNews);
+      fetchNews();
+      setCurrentNews({
+        id: 0,
+        title: '',
+        tagline: '',
+        content:'',
+        description: '',
+        imageUrl:'', 
+        videoUrl:'',
+        category: '',
+      });
+      setShow(false);
+    } catch (error) {
+      console.log('error', error);
+    }
+  };
 
-  // const handleUpdateClick = (user: any) => {
-  //   setCurrentEmployee({
-  //     id: user.id,
-  //     name: user.name,
-  //     email: user.email,
-  //     phone: user.phone,
-  //     gender: user.gender,
-  //   });
-  //   handleShow();
-  // };
+  const handleUpdateClick = (news: any) => {
+    handleShow(values)
+    setCurrentNews({
+      id: news.id,
+      title: news.title,
+      tagline: news.tagline,
+      content:news.content,
+      description: news.description,
+      imageUrl:news.imageUrl, 
+      videoUrl:news.videoUrl,
+      category: news.category,
+    });
+    setShow(true);
+  };
 
 
 
   
   useEffect(() => {
+    
+  const loginData = localStorage.getItem('user_login');
+  if (loginData) {
+    const loggedInPerson = JSON.parse(loginData);
+    const { name } = loggedInPerson;
+    setActiveAdimin(name);
+    
+  } else {
+    console.log("No login data found in localStorage");
+  }
 
     fetchNews();
   }, []);
@@ -95,12 +123,12 @@ const response = await userServices().deleteNews(id)
     <>
    
       <div className="mb-3">
+        <div>
+          <h1>Welcome : {activeAdimin} </h1>
+        </div>
         <Link to={'/addNews'}>
           <Button variant="success">Add</Button>
         </Link>
-          <Button className="me-2 mb-2" onClick={() => handleShow(values)}>
-          Full screen 
-        </Button>
       </div>
 
       {formData.length > 0 ? (
@@ -128,7 +156,7 @@ const response = await userServices().deleteNews(id)
                 </td>
                 <td>
                   <Button variant="danger" className="mr-2" onClick={()=> deleteNews(data.id)}>Delete</Button>
-                  <Button variant="warning">Update</Button>
+                  <Button variant="warning" onClick={()=>handleUpdateClick(data)}>Update</Button>
                 </td>
               </tr>
             ))}
@@ -140,13 +168,15 @@ const response = await userServices().deleteNews(id)
             </Modal.Header>
             <Modal.Body>
 
-            <Form>
+            <Form  onSubmit={(e) => { e.preventDefault(); updateNews(); }}>
             <Form.Group controlId="title">
                    <Form.Label>News Title</Form.Label>
                    <Form.Control
                      type="text"
                      className="form-control bg-dark text-white"
                       name="title"
+                      value={currentNews.title}
+                      onChange={(e)=> setCurrentNews({...currentNews, title: e.target.value})}
                    />
                   </Form.Group>
                 <Form.Group controlId="tagline">
@@ -155,6 +185,8 @@ const response = await userServices().deleteNews(id)
                     type="text"
                     className="form-control bg-dark text-white"
                     name="tagline"
+                    value={currentNews.tagline}
+                    onChange={(e)=> setCurrentNews({...currentNews, tagline: e.target.value})}
                   
                   
                   />
@@ -166,6 +198,8 @@ const response = await userServices().deleteNews(id)
                     rows={5}
                     className="form-control bg-dark text-white"
                     name="content"
+                    value={currentNews.content}
+                    onChange={(e)=> setCurrentNews({...currentNews, content: e.target.value})}
                 
                 
                   />
@@ -177,6 +211,8 @@ const response = await userServices().deleteNews(id)
                     rows={3}
                     className="form-control bg-dark text-white"
                     name="description"
+                    value={currentNews.description}
+                    onChange={(e)=> setCurrentNews({...currentNews, description: e.target.value})}
                     
                   
                   />
@@ -187,6 +223,8 @@ const response = await userServices().deleteNews(id)
                     type="text"
                     className="form-control bg-dark text-white"
                     name="category"
+                    value={currentNews.category}
+                    onChange={(e)=> setCurrentNews({...currentNews, category: e.target.value})}
                     
                   />
                 </Form.Group>
@@ -196,6 +234,8 @@ const response = await userServices().deleteNews(id)
                     type="text"
                     className="form-control bg-dark text-white"
                     name="image"
+                    value={currentNews.imageUrl}
+                    onChange={(e)=> setCurrentNews({...currentNews, imageUrl: e.target.value})}
                   
                   />
                 </Form.Group>
@@ -205,6 +245,8 @@ const response = await userServices().deleteNews(id)
                     type="text"
                     className="form-control bg-dark text-white"
                     name="videoUrl"
+                    value={currentNews.videoUrl}
+                    onChange={(e)=> setCurrentNews({...currentNews, videoUrl: e.target.value})}
                     
                   />
                 </Form.Group>
@@ -217,7 +259,7 @@ const response = await userServices().deleteNews(id)
                     type="submit"
                     size="lg"
                   >
-                    Submit
+             Save Changes
                   </Button>
                 </div>
               </Form>

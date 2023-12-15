@@ -59,7 +59,7 @@
 
 
 import  { useEffect, useState } from "react";
-import { Container, Row, Col } from "react-bootstrap";
+import { Container, Row, Col, Form } from "react-bootstrap";
 import NewsCard from "./NewsCard";
 import CatButton from "./CatButton";
 import data from '../data.json';
@@ -78,6 +78,8 @@ interface NewsData {
 const NewsPost = () => {
   const [formData, setFormData] = useState<NewsData[]>([]);
   const [filteredItems, setFilteredItems] = useState<NewsData[]>([]);
+  const [searchTerm, setSearchTerm] = useState<string>("");
+
   const categoryItems = [...new Set(formData.map((val) => val.category))];
 
   useEffect(() => {
@@ -103,10 +105,35 @@ const NewsPost = () => {
       setFilteredItems(newItems);
     }
   };
+
+
+  const handleSearch = () => {
+    const searchResults = formData.filter(
+      (news) =>
+        news.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        news.description.toLowerCase().includes(searchTerm.toLowerCase())
+    );
+    setFilteredItems(searchResults);
+  };
   const sortedItems = filteredItems.slice().sort((a, b) => b.id - a.id);
 
   return (
     <Container className="mt-4">
+
+
+<Form className="mb-4">
+        <Form.Group controlId="searchTerm">
+          <Form.Control
+            type="text"
+            placeholder="Search by title or description"
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+          />
+        </Form.Group>
+        <button type="button" className="btn btn-primary" onClick={handleSearch}>
+          Search
+        </button>
+      </Form>
       <CatButton catItems={categoryItems} filterItem={filterNews} setItems={setFilteredItems} />
       {sortedItems.length > 0 ? (
         <Row>

@@ -2,9 +2,9 @@
   "posts": [
     {
       "id": 1,
-      "title": "Exciting Tech Advancements Unveiled",
-      "content": "Discover the latest technological breakthroughs shaping our future. From artificial intelligence to space exploration, this news covers it all.",
+      "title": "news title updated ",
       "tagline": "Exploring the cutting-edge world of technology and innovation.",
+      "content": "Discover the latest technological breakthroughs shaping our future. From artificial intelligence to space exploration, this news covers it all.",
       "description": "Exciting Tech Advancements Unveiled provides insights into the latest technological breakthroughs that are shaping the future. The news covers a wide range of topics, including artificial intelligence, space exploration, and more.",
       "imageUrl": "/tech1.jpg",
       "videoUrl": "https://youtu.be/LK5j3pp0Too?si=q7J1D6GyB6Nk1_ah",
@@ -115,6 +115,14 @@
       "password": "john",
       "role": "admin",
       "id": 105
+    },
+    {
+      "id": 106,
+      "username": "sanskruti queen",
+      "name": "Sanskruti Thorat",
+      "email": "sanskrutithorat01@gmail.com",
+      "password": "India@123",
+      "role": "admin"
     }
   ]
 }

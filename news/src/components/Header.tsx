@@ -5,7 +5,7 @@
 import { useState, useEffect } from 'react';
 import { Form, Navbar, Nav, Button, Modal, Container } from 'react-bootstrap';
 import { Link as RouterLink, useNavigate } from 'react-router-dom';
-import logo from '../assets/global-247-high-resolution-logo-transparent.svg';
+import logo from '../../assets/global-247-high-resolution-logo-transparent.svg';
 import UserServices from '../Axios/user.services';
 import { Formik, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
