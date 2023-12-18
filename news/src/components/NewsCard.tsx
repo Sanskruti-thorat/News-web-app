@@ -9,6 +9,7 @@ interface NewsData {
   description: string;
   imageUrl: string;
   category: string;
+  videoUrl: string;
 }
 
 interface NewscardProps {

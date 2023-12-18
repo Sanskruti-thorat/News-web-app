@@ -65,6 +65,8 @@ const Header = () => {
     localStorage.removeItem('user_login');
     setLoggedIn(false);
     navigate('/');
+    toast.error('You Have Logged Out !');
+
   };
 
   useEffect(() => {
@@ -104,7 +106,18 @@ const Header = () => {
           </Navbar.Collapse>
         </Container>
       </Navbar>
-      <ToastContainer />
+      <ToastContainer
+          position="top-center"
+          autoClose={5000}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+          theme="dark"
+          />
     </>
   );
 };

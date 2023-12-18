@@ -59,10 +59,12 @@
 
 
 import  { useEffect, useState } from "react";
-import { Container, Row, Col, Form } from "react-bootstrap";
+import { Container, Row, Col, Form, Button } from "react-bootstrap";
 import NewsCard from "./NewsCard";
 import CatButton from "./CatButton";
 import data from '../data.json';
+import { FaSearch } from "react-icons/fa";
+
 
 
 interface NewsData {
@@ -73,6 +75,7 @@ interface NewsData {
   description: string;
   imageUrl: string;
   category: string;
+  videoUrl: string;
 }
 
 const NewsPost = () => {
@@ -121,7 +124,7 @@ const NewsPost = () => {
     <Container className="mt-4">
 
 
-<Form className="mb-4">
+       <Form className="mb-4">
         <Form.Group controlId="searchTerm">
           <Form.Control
             type="text"
@@ -130,9 +133,9 @@ const NewsPost = () => {
             onChange={(e) => setSearchTerm(e.target.value)}
           />
         </Form.Group>
-        <button type="button" className="btn btn-primary" onClick={handleSearch}>
-          Search
-        </button>
+        <Button  className="btn-light" onClick={handleSearch}>
+        <FaSearch />
+       </Button>
       </Form>
       <CatButton catItems={categoryItems} filterItem={filterNews} setItems={setFilteredItems} />
       {sortedItems.length > 0 ? (

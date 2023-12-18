@@ -69,10 +69,10 @@ const NewsDetail = () => {
    controls
    width="100%" 
    style={{ maxWidth: '100%', margin: '0 auto' }} 
-    />
-
-                <p>{blog.content}</p>
-              </div>
+    />        
+    
+   <p>{blog.content}</p>
+             </div>
             </Col>
           </Row>
           <Card.Text>{blog.description}</Card.Text>

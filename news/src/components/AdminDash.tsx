@@ -236,6 +236,9 @@ import UserServices from "../Axios/user.services";
 import { useState, useEffect } from "react";
 import { useFormik } from "formik";
 import { validationSchema } from '../Validation/ValSchma';
+import { MdDeleteForever } from "react-icons/md";
+import { RiEdit2Fill } from "react-icons/ri";
+import { ToastContainer, toast } from "react-toastify";
 
 interface AdminData {
   id: number;
@@ -263,7 +266,7 @@ const AdminDash = () => {
   const getAdmin = async () => {
     try {
       const response = await userServices().getAdmin();
-      console.log("response", response);
+      // console.log("response", response);
       setAdminList(response.data);
     } catch (error) {
       console.log("error", error);
@@ -283,6 +286,7 @@ const AdminDash = () => {
         role: "",
       });
       getAdmin();
+      toast.success('Added Successfully')
     } catch (error) {
       console.log("error", error);
     }
@@ -364,6 +368,7 @@ const AdminDash = () => {
   }, []);
   
   return (
+    <>
     <Container className="mt-4">
       <Row>
         <Col>
@@ -390,12 +395,13 @@ const AdminDash = () => {
                   <td>{admin.password}</td>
                   <td>{admin.role}</td>
                   <td>
-                    <Button variant="danger" onClick={() => deleteAdmin(admin.id)}>
-                      Delete
-                    </Button>
-                    <Button variant="warning" className="ms-2" onClick={() => handleUpdateClick(admin)}>
-                      Update
-                    </Button>
+                  <Button variant="light" className="icon-button" onClick={() => deleteAdmin(admin.id)}>
+                   <MdDeleteForever size={30} />
+                  </Button>
+                  <Button variant="light" className="icon-button" onClick={() => handleUpdateClick(admin)} >
+                  <RiEdit2Fill  size={30} />
+                  </Button>
+                 
                   </td>
                 </tr>
               ))}
@@ -469,6 +475,19 @@ const AdminDash = () => {
         </Col>
       </Row>
     </Container>
+    <ToastContainer
+    position="top-center"
+    autoClose={5000}
+    hideProgressBar={false}
+    newestOnTop={false}
+    closeOnClick
+    rtl={false}
+    pauseOnFocusLoss
+    draggable
+    pauseOnHover
+    theme="dark"
+    />
+    </>
   );
 };
 

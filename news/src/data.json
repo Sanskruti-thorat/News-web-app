@@ -2,7 +2,7 @@
   "posts": [
     {
       "id": 1,
-      "title": "news title updated ",
+      "title": "news title updated new",
       "tagline": "Exploring the cutting-edge world of technology and innovation.",
       "content": "Discover the latest technological breakthroughs shaping our future. From artificial intelligence to space exploration, this news covers it all.",
       "description": "Exciting Tech Advancements Unveiled provides insights into the latest technological breakthroughs that are shaping the future. The news covers a wide range of topics, including artificial intelligence, space exploration, and more.",
@@ -93,36 +93,36 @@
   ],
   "admin": [
     {
-      "id": 102,
-      "username": "jane_smith",
-      "name": "Jane Smith",
-      "email": "jane.smith@example.com",
-      "password": "India@123",
-      "role": "user"
-    },
-    {
-      "username": "me",
-      "name": "me",
-      "email": "me@gmail.com",
-      "password": "me",
-      "role": "admin",
-      "id": 104
-    },
-    {
-      "username": "john done",
-      "name": "johndoe",
-      "email": "johndoe@gmail.com",
-      "password": "john",
-      "role": "admin",
-      "id": 105
-    },
-    {
       "id": 106,
       "username": "sanskruti queen",
       "name": "Sanskruti Thorat",
       "email": "sanskrutithorat01@gmail.com",
       "password": "India@123",
+      "role": "user"
+    },
+    {
+      "id": 107,
+      "username": "sanskruti",
+      "name": "me",
+      "email": "me@gmail.com",
+      "password": "India@123",
       "role": "admin"
+    },
+    {
+      "id": 108,
+      "username": "sanskruti",
+      "name": "Sanskruti Thorat",
+      "email": "sanskrutithorat11@gmail.com",
+      "password": "India@123",
+      "role": "admin"
+    },
+    {
+      "id": 109,
+      "username": "Sonu",
+      "name": "Sonu thorat",
+      "email": "sanskrutithorat1@gmail.com",
+      "password": "India@123",
+      "role": "user"
     }
   ]
 }

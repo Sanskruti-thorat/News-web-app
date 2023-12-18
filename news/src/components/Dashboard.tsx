@@ -4,6 +4,11 @@ import { useEffect, useState } from "react";
 import {  Link } from "react-router-dom";
 import { Form, Button, Modal, Table } from 'react-bootstrap';
 import UserServices from "../Axios/user.services";
+import { AiFillDelete } from "react-icons/ai";
+import { FiEdit } from "react-icons/fi";
+import { CgMoreO } from "react-icons/cg";
+import { MdLibraryAdd } from "react-icons/md";
+
 
 
 interface NewsData {
@@ -127,7 +132,7 @@ const response = await userServices().deleteNews(id)
           <h1>Welcome : {activeAdimin} </h1>
         </div>
         <Link to={'/addNews'}>
-          <Button variant="success">Add</Button>
+          <Button variant="light"><MdLibraryAdd size={30} /></Button>
         </Link>
       </div>
 
@@ -150,13 +155,13 @@ const response = await userServices().deleteNews(id)
                 <td>{data.category}</td>
                 <td>{data.tagline}</td>
                 <td>
-                  <Link to={`/NewsDetail/${data.id}`} className="btn btn-info">
-                    Read More
+                  <Link to={`/NewsDetail/${data.id}`} className="btn dark">
+                  <CgMoreO size={30} className="light" />
                   </Link>
                 </td>
                 <td>
-                  <Button variant="danger" className="mr-2" onClick={()=> deleteNews(data.id)}>Delete</Button>
-                  <Button variant="warning" onClick={()=>handleUpdateClick(data)}>Update</Button>
+                  <Button variant="dark" className="icon-button"  onClick={()=> deleteNews(data.id)}><AiFillDelete size={30} /></Button>
+                  <Button variant="dark" className="icon-button"  onClick={()=>handleUpdateClick(data)}><FiEdit size={30} /></Button>
                 </td>
               </tr>
             ))}
