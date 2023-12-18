@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
 // import { useRef, useState } from "react";
+import Annoucement from "./Annoucement";
 import NewsPost from "./NewsPost";
 
 
@@ -9,7 +10,7 @@ const HomePage = () => {
     
 
     <>
-
+      <Annoucement/>
       <NewsPost />
     </>
   );

@@ -295,6 +295,7 @@ const AdminDash = () => {
   const deleteAdmin = async (id: number) => {
     try {
       const response = await userServices().deleteAdmin(id);
+      toast.success("Successfully deleted the data!")
       console.log("response", response);
       getAdmin();
     } catch (error) {

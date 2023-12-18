@@ -124,5 +124,31 @@
       "password": "India@123",
       "role": "user"
     }
-  ]
+  ],
+ "annoucment":[
+{
+ "id":0,
+ "annoucement":"MCd Offering free grilled burger!"
+},
+{
+  "id":1,
+  "annoucement":"MCd Offering free grilled burger!"
+ },
+ {
+  "id":2,
+  "annoucement":"MCd Offering free grilled burger!"
+ },
+ {
+  "id":3,
+  "annoucement":"MCd Offering free grilled burger!"
+ },
+ {
+  "id":4,
+  "annoucement":"MCd Offering free grilled burger!"
+ },
+ {
+  "id":5,
+  "annoucement":"MCd Offering free grilled burger!"
+ }
+ ]
 }
