@@ -17,7 +17,7 @@ const Footer = () => {
 
   return (
     <div style={footerStyle}>
-      <p>&copy; 2023 Your Website. All Rights Reserved.</p>
+      <p>&copy; 2023 Global 24/7 Website. All Rights Reserved.</p>
       <div>
         <a href="#" style={iconStyle}><FaTwitter /></a>
         <a href="#" style={iconStyle}><FaFacebook /></a>
