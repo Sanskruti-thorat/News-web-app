@@ -64,6 +64,7 @@ import NewsCard from "./NewsCard";
 import CatButton from "./CatButton";
 import data from '../data.json';
 import { FaSearch } from "react-icons/fa";
+// import Annoucement from "./Annoucement";
 
 
 
@@ -122,7 +123,6 @@ const NewsPost = () => {
 
   return (
     <Container className="mt-4">
-
 
        <Form className="mb-4">
         <Form.Group controlId="searchTerm">

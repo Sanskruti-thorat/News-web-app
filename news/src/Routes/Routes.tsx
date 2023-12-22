@@ -8,6 +8,7 @@ const Dashboard = LazyLoader(lazy(async () => await import('../components/Dashbo
 const AddNews = LazyLoader(lazy(async () => await import('../components/AddNews')));
 const AdminDash = LazyLoader(lazy(async () => await import('../components/AdminDash')));
 const ErrorPage = LazyLoader(lazy(async () => await import('../components/ErrorPage')));
+const AnnouncementDash = LazyLoader(lazy(async () => await import('../components/AnnouncementDash')));
 
 
 
@@ -35,6 +36,10 @@ const Routes = [
      path:'/adminDash',
      element:<AdminDash/>
     },
+    {
+      path:'/annouceDash',
+      element:<AnnouncementDash/>
+     },
     {
       path:'*',
       element:<ErrorPage/>

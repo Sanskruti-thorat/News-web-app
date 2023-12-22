@@ -32,10 +32,9 @@ const UserServices =()=>{
         updateAdmin: async (id: number, data: object) => {
           return await axios.put(`/admin/${id}`, data);
         },
-
-        getAnnoucement: async () => {
+        getAnnoucement: async() => {
           return await axios.get('/annoucment');
-        },
+         },
         addAnnouce:async (data:object)=> {
           return await axios.post('/annoucment', data);
         },

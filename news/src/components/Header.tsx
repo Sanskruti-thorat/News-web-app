@@ -94,6 +94,9 @@ const Header = () => {
                   <Nav.Link as={RouterLink} to="/adminDash" className="nav-link" style={{ color: 'grey' }}>
                     Admin Dashboard
                   </Nav.Link>
+                  <Nav.Link as={RouterLink} to="/annouceDash" className="nav-link" style={{ color: 'grey' }}>
+                    Annoucement Dashboard
+                  </Nav.Link>
                 </>
               )}
             </Nav>

@@ -1,0 +1,50 @@
+
+.announcement {
+    background-color: #ddd;
+    padding: 50px;
+    display: flex;
+    justify-content:space-around;
+    align-items: center;
+  }
+
+  .announcement-buttons {
+    display: flex;
+    gap: 20px;
+  }
+.button-add{
+    padding: 8px 16px;
+    background-color: #2e9480;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer; 
+}
+  .button {
+    padding: 8px 16px;
+    background-color: #e31f40;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  .button:hover {
+    background-color: #160606;
+  }
+  .button-add:hover{
+    background-color: #160606;
+  }
+  .announcement-input {
+    flex-grow: 1;
+    margin-right: 20px;
+    padding: 8px;
+    border: 1px solid #888;
+    border-radius: 4px;
+  }
+  .announcementInput {
+    background-color: #ddd;
+    padding: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }

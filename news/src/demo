@@ -469,3 +469,109 @@ const Page3 = () => {
 };
 
 export default Page3;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Routes.tsx
+import { useNavigate, Route } from 'react-router-dom';
+import { Navigate } from 'react-router';
+import { useAuth } from 'path-to-your-auth-context'; // Adjust the import path accordingly
+import HomePage from '../components/Homepage';
+import NewsDetail from '../components/NewsDetail';
+import Dashboard from '../components/Dashboard';
+import AddNews from '../components/AddNews';
+import AdminDash from '../components/AdminDash';
+import ErrorPage from '../components/ErrorPage';
+import AnnouncementDash from '../components/AnnouncementDash';
+
+const Routes = [
+  {
+    path: '/',
+    element: <HomePage />,
+  },
+  {
+    path: '/newsDetail/:id',
+    element: <NewsDetail />,
+  },
+  {
+    path: '/dashboard',
+    element: <Dashboard />,
+    access: ['admin', 'user'],
+  },
+  {
+    path: '/addNews',
+    element: <AddNews />,
+    access: ['admin'],
+  },
+  {
+    path: '/adminDash',
+    element: <AdminDash />,
+    access: ['admin'],
+  },
+  {
+    path: '/annouceDash',
+    element: <AnnouncementDash />,
+    access: ['admin'],
+  },
+  {
+    path: '*',
+    element: <ErrorPage />,
+  },
+];
+
+const AuthenticatedRoute: React.FC<{ element: React.ReactElement; access: string[] }> = ({ element, access }) => {
+  const { isAuthenticated, user } = useAuth();
+  const navigate = useNavigate();
+
+  const isAuthorized = isAuthenticated && user && access.includes(user.role);
+
+  return isAuthorized ? element : <Navigate to="/" replace />;
+};
+
+const AppRoutes: React.FC = () => {
+  return (
+    <Routes>
+      {Routes.map((route, index) => (
+        <Route
+          key={index}
+          path={route.path}
+          element={<AuthenticatedRoute element={route.element} access={route.access || []} />}
+        />
+      ))}
+    </Routes>
+  );
+};
+
+export default AppRoutes;
