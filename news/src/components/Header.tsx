@@ -11,6 +11,7 @@ import { Formik, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { useAuth } from '../Auth/AuthContext'; // Update the path
 
 const validationSchema = Yup.object().shape({
   email: Yup.string().email('Invalid email address').required('Email is required'),
@@ -19,7 +20,8 @@ const validationSchema = Yup.object().shape({
 
 const Header = () => {
   const [modalShow, setModalShow] = useState(false);
-  const [loggedIn, setLoggedIn] = useState(false);
+  // const [loggedIn, setLoggedIn] = useState(false);
+  const {  setLoggedIn, loggedIn, login, logout } = useAuth(); // Use the useAuth hook
 
   const userServices = UserServices();
   const navigate = useNavigate();
@@ -38,14 +40,13 @@ const Header = () => {
         (admin: any) => admin.email === values.email && admin.password === values.password
       );
 
+
       if (foundAdmin) {
         if (foundAdmin.role === 'admin') {
-          localStorage.setItem('user_login', JSON.stringify(foundAdmin));
-          setLoggedIn(true);
+          login(foundAdmin); // Use the login function from useAuth
           setModalShow(false);
           navigate('/dashboard');
-                    toast.success('Login successful!');
-
+          toast.success('Login successful!');
         } else {
           toast.error('Not authorized');
         }
@@ -55,6 +56,23 @@ const Header = () => {
     } catch (error) {
       console.error('Error fetching admin data:', error);
     }
+    //   if (foundAdmin) {
+    //     if (foundAdmin.role === 'admin') {
+    //       localStorage.setItem('user_login', JSON.stringify(foundAdmin));
+    //       setLoggedIn(true);
+    //       setModalShow(false);
+    //       navigate('/dashboard');
+    //                 toast.success('Login successful!');
+
+    //     } else {
+    //       toast.error('Not authorized');
+    //     }
+    //   } else {
+    //     toast.error('Invalid email or password');
+    //   }
+    // } catch (error) {
+    //   console.error('Error fetching admin data:', error);
+    // }
   };
 
   const handleLogin = async (values: any) => {
@@ -62,8 +80,9 @@ const Header = () => {
   };
 
   const handleLogout = () => {
-    localStorage.removeItem('user_login');
-    setLoggedIn(false);
+    // localStorage.removeItem('user_login');
+    logout(); // Use the logout function from useAuth
+    // setLoggedIn(false);
     navigate('/');
     toast.error('You Have Logged Out !');
 
