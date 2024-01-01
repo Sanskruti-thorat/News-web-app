@@ -209,7 +209,7 @@ const NewsPost = () => {
   const [filteredItems, setFilteredItems] = useState<NewsData[]>([]);
   const [searchTerm, setSearchTerm] = useState<string>("");
   const [currentPage, setCurrentPage] = useState<number>(1);
-  const [postsPerPage] = useState<number>(3);
+  const [postsPerPage] = useState<number>(6);
 
   const categoryItems = [...new Set(formData.map((val) => val.category))];
 
