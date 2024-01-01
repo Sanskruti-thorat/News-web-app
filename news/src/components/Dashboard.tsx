@@ -168,7 +168,7 @@ const response = await userServices().deleteNews(id)
           </tbody>
         </Table>
             <Modal show={show} fullscreen={fullscreen} onHide={() => setShow(false)}>
-            <Modal.Header closeButton>
+            <Modal.Header closeButton >
               <Modal.Title>Modal</Modal.Title>
             </Modal.Header>
             <Modal.Body>
