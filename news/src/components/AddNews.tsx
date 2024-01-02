@@ -1,8 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
-
-
-
 import { useState } from 'react';
 import { Form, Button, Card } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
@@ -33,6 +30,7 @@ const Addnews = () => {
   const handleImageChange = (e:any) => {
     const image = e.target.value;
     // const image = URL.createObjectURL(e.target.files[0]);
+    // this worked as well but after a while the link doesnt work so used path instead 
     setNewsData({
       ...newsData,
       imageUrl: image,

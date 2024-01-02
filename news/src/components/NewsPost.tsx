@@ -1,3 +1,113 @@
+
+
+// after pagination 
+
+
+import { useEffect, useState } from "react";
+import { Container, Row, Col, Form, Button } from "react-bootstrap";
+import NewsCard from "./NewsCard";
+import CatButton from "./CatButton";
+import Pagination from "./pagination"; 
+import data from '../data.json';
+import { FaSearch } from "react-icons/fa";
+
+interface NewsData {
+  id: number;
+  title: string;
+  tagline: string;
+  content: string;
+  description: string;
+  imageUrl: string;
+  category: string;
+  videoUrl: string;
+}
+
+const NewsPost = () => {
+  const [formData, setFormData] = useState<NewsData[]>([]);
+  const [filteredItems, setFilteredItems] = useState<NewsData[]>([]);
+  const [searchTerm, setSearchTerm] = useState<string>("");
+  const [currentPage, setCurrentPage] = useState<number>(1);
+  const [postsPerPage] = useState<number>(6);
+
+  const categoryItems = [...new Set(formData.map((val) => val.category))];
+
+  useEffect(() => {
+    const fetchData = async () => {
+      setFormData(data.posts);
+      setFilteredItems(data.posts);
+    };
+
+    fetchData();
+  }, []);
+
+  const filterNews = (cat: string) => {
+    if (cat === "All") {
+      setFilteredItems(formData);
+    } else {
+      const newItems = formData.filter((newval) => newval.category === cat);
+      setFilteredItems(newItems);
+    }
+  };
+
+  const handleSearch = () => {
+    const searchResults = formData.filter(
+      (news) =>
+        news.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        news.description.toLowerCase().includes(searchTerm.toLowerCase())
+    );
+    setFilteredItems(searchResults);
+  };
+
+  const lastPostIndex = currentPage * postsPerPage;
+  const firstPostIndex = lastPostIndex - postsPerPage;
+  const currentPosts = filteredItems.slice(firstPostIndex, lastPostIndex);
+  const totalPages = Math.ceil(filteredItems.length / postsPerPage);
+
+  return (
+    <Container className="mt-4">
+      <Form className="mb-4">
+        <Form.Group controlId="searchTerm">
+          <Form.Control
+            type="text"
+            placeholder="Search by title or description"
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+          />
+        </Form.Group>
+        <Button className="btn-light" onClick={handleSearch}>
+          <FaSearch />
+        </Button>
+      </Form>
+      <CatButton catItems={categoryItems} filterItem={filterNews} setItems={setFilteredItems} />
+      {currentPosts.length > 0 ? (
+        <>
+          <Row>
+            {currentPosts.map((data) => (
+              <Col key={data.id} md={4} className="mb-4">
+                <NewsCard data={data} />
+              </Col>
+            ))}
+          </Row>
+          <div className="pagination">
+            <Pagination
+              totalPages={totalPages}
+              setCurrentPage={setCurrentPage}
+              currentPage={currentPage}
+            />
+          </div>
+        </>
+      ) : (
+        <p>No news available</p>
+      )}
+    </Container>
+  );
+};
+
+export default NewsPost;
+
+
+
+
 // import { useEffect, useState } from "react";
 // import { Container, Row, Col } from "react-bootstrap";
 // import UserServices from "../Axios/user.services";
@@ -178,112 +288,3 @@
 // };
 
 // export default NewsPost;
-
-
-
-
-// after pagination 
-
-
-import { useEffect, useState } from "react";
-import { Container, Row, Col, Form, Button } from "react-bootstrap";
-import NewsCard from "./NewsCard";
-import CatButton from "./CatButton";
-import Pagination from "./pagination"; 
-import data from '../data.json';
-import { FaSearch } from "react-icons/fa";
-
-interface NewsData {
-  id: number;
-  title: string;
-  tagline: string;
-  content: string;
-  description: string;
-  imageUrl: string;
-  category: string;
-  videoUrl: string;
-}
-
-const NewsPost = () => {
-  const [formData, setFormData] = useState<NewsData[]>([]);
-  const [filteredItems, setFilteredItems] = useState<NewsData[]>([]);
-  const [searchTerm, setSearchTerm] = useState<string>("");
-  const [currentPage, setCurrentPage] = useState<number>(1);
-  const [postsPerPage] = useState<number>(6);
-
-  const categoryItems = [...new Set(formData.map((val) => val.category))];
-
-  useEffect(() => {
-    const fetchData = async () => {
-      setFormData(data.posts);
-      setFilteredItems(data.posts);
-    };
-
-    fetchData();
-  }, []);
-
-  const filterNews = (cat: string) => {
-    if (cat === "All") {
-      setFilteredItems(formData);
-    } else {
-      const newItems = formData.filter((newval) => newval.category === cat);
-      setFilteredItems(newItems);
-    }
-  };
-
-  const handleSearch = () => {
-    const searchResults = formData.filter(
-      (news) =>
-        news.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        news.description.toLowerCase().includes(searchTerm.toLowerCase())
-    );
-    setFilteredItems(searchResults);
-  };
-
-  const lastPostIndex = currentPage * postsPerPage;
-  const firstPostIndex = lastPostIndex - postsPerPage;
-  const currentPosts = filteredItems.slice(firstPostIndex, lastPostIndex);
-
-  const totalPages = Math.ceil(filteredItems.length / postsPerPage);
-
-  return (
-    <Container className="mt-4">
-      <Form className="mb-4">
-        <Form.Group controlId="searchTerm">
-          <Form.Control
-            type="text"
-            placeholder="Search by title or description"
-            value={searchTerm}
-            onChange={(e) => setSearchTerm(e.target.value)}
-          />
-        </Form.Group>
-        <Button className="btn-light" onClick={handleSearch}>
-          <FaSearch />
-        </Button>
-      </Form>
-      <CatButton catItems={categoryItems} filterItem={filterNews} setItems={setFilteredItems} />
-      {currentPosts.length > 0 ? (
-        <>
-          <Row>
-            {currentPosts.map((data) => (
-              <Col key={data.id} md={4} className="mb-4">
-                <NewsCard data={data} />
-              </Col>
-            ))}
-          </Row>
-          <div className="pagination">
-            <Pagination
-              totalPages={totalPages}
-              setCurrentPage={setCurrentPage}
-              currentPage={currentPage}
-            />
-          </div>
-        </>
-      ) : (
-        <p>No news available</p>
-      )}
-    </Container>
-  );
-};
-
-export default NewsPost;

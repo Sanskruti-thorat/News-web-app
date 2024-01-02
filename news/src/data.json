@@ -2,7 +2,7 @@
   "posts": [
     {
       "id": 1,
-      "title": "news title updated new",
+      "title": "Updated News of  techno",
       "tagline": "Exploring the cutting-edge world of technology and innovation.",
       "content": "Discover the latest technological breakthroughs shaping our future. From artificial intelligence to space exploration, this news covers it all.",
       "description": "Exciting Tech Advancements Unveiled provides insights into the latest technological breakthroughs that are shaping the future. The news covers a wide range of topics, including artificial intelligence, space exploration, and more.",
@@ -103,7 +103,7 @@
     {
       "id": 107,
       "username": "sanskruti",
-      "name": "me",
+      "name": "Editor",
       "email": "me@gmail.com",
       "password": "India@123",
       "role": "admin"
@@ -118,29 +118,29 @@
     },
     {
       "id": 109,
-      "username": "Sonu",
-      "name": "Sonu thorat",
-      "email": "sanskrutithorat1@gmail.com",
+      "username": "guest updated ",
+      "name": "guest",
+      "email": "guest@gmail.com",
       "password": "India@123",
       "role": "user"
     }
   ],
   "annoucment": [
     {
-      "id": 7,
-      "annoucement": "Cats Are killing people "
-    },
-    {
-      "id": 8,
-      "annoucement": "HUGE ANTs ARE TAKING OVER THE CITY "
-    },
-    {
       "id": 9,
       "annoucement": "1000 Emplolyees laid Off from tcs "
     },
     {
-      "id": 10,
-      "annoucement": "Lion on the run"
+      "id": 11,
+      "annoucement": "7 people killed in hit and run case"
+    },
+    {
+      "id": 12,
+      "annoucement": "major airplane crash in texas"
+    },
+    {
+      "id": 13,
+      "annoucement": "Tsunami warning in japan after 7.5 mg earthquake"
     }
   ]
 }

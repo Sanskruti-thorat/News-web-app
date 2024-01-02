@@ -1,8 +1,5 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable @typescript-eslint/no-explicit-any */
-
-
-
 import { useState, useEffect } from 'react';
 import { Form, Navbar, Nav, Button, Modal, Container } from 'react-bootstrap';
 import { Link as RouterLink, useNavigate } from 'react-router-dom';
@@ -12,7 +9,7 @@ import { Formik, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { useAuth } from '../Auth/AuthContext'; // Update the path
+import { useAuth } from '../Auth/AuthContext'; 
 
 const validationSchema = Yup.object().shape({
   email: Yup.string().email('Invalid email address').required('Email is required'),
@@ -22,7 +19,7 @@ const validationSchema = Yup.object().shape({
 const Header = () => {
   const [modalShow, setModalShow] = useState(false);
   // const [loggedIn, setLoggedIn] = useState(false);
-  const {  setLoggedIn, loggedIn, login, logout } = useAuth(); // Use the useAuth hook
+  const {  setLoggedIn, loggedIn, login, logout } = useAuth(); 
 
   const userServices = UserServices();
   const navigate = useNavigate();
@@ -44,7 +41,7 @@ const Header = () => {
 
       if (foundAdmin) {
         if (foundAdmin.role === 'admin') {
-          login(foundAdmin); // Use the login function from useAuth
+          login(foundAdmin); 
           setModalShow(false);
           navigate('/dashboard');
           toast.success('Login successful!');
@@ -82,7 +79,7 @@ const Header = () => {
 
   const handleLogout = () => {
     // localStorage.removeItem('user_login');
-    logout(); // Use the logout function from useAuth
+    logout();
     // setLoggedIn(false);
     navigate('/');
     toast.error('You Have Logged Out !');

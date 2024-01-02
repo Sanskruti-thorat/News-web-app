@@ -1,6 +1,5 @@
 /* eslint-disable react-refresh/only-export-components */
 /* eslint-disable @typescript-eslint/no-explicit-any */
-// AuthContext.tsx
 import React, { createContext, useContext, ReactNode, useEffect, useState } from 'react';
 
 interface AuthContextProps {

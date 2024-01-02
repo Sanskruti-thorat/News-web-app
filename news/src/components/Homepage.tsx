@@ -11,7 +11,6 @@ const HomePage = () => {
 
     <>
       <Annoucement/>
-
       <NewsPost />
     </>
   );
@@ -39,7 +38,7 @@ export default HomePage;
     
 //   }
 // };
-{/* 
+/* 
       <input type="file" ref={inputRef} name="file" onChange={handleChange} />
       <button onClick={handleUpload}>Upload</button>
       {imageUrl !== null && (
@@ -48,4 +47,4 @@ export default HomePage;
           style={{ height: "100px", width: "200px" }}
           alt="Uploaded file"
           />
-        )} */}
+        )} */
